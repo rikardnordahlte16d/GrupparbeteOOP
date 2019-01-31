@@ -34,27 +34,55 @@ public abstract class Car implements Moveable {
 	public void startEngine() {
 		currentSpeed = 0.1;
 	}
-
+	/**
+	 * Motor på bilen stoppar
+	 */
 	public void stopEngine() {
 		currentSpeed = 0;
 	}
-
+	/**
+	 * Returnerar formeln på bilens fart
+	 * @return
+	 */
 	public double speedFactor() {
 		return 0;
 	}
-
+	
+	/**
+	 * ökning av farten, i form av en variable av Currentspeed och speedfactor gånger amount
+	 * @param amount
+	 */
+	
 	public void incrementSpeed(double amount) {
 		currentSpeed = getCurrentSpeed() + speedFactor() * amount;
+		
 	}
+	
+	
+	/**
+	 * minskning av farten, i form av en variable av Currentspeed och speedfactor gånger amount
+	 * @param amount
+	 */
 
 	public void decrementSpeed(double amount) {
 		currentSpeed = getCurrentSpeed() - speedFactor() * amount;
 	}
 
+	
+	/**
+	 * gasa bilen med amount förändring beroende på ökad fart.	
+	 * @param amount
+	 */
+	
 	public void gas(double amount) {
 		incrementSpeed(amount);
 	}
 
+	/**
+	 * 
+	 * @param 
+	 */
+	
 	public void brake(double amount) {
 		decrementSpeed(amount);
 	}
