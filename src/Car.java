@@ -7,19 +7,30 @@ public abstract class Car implements Moveable {
 	public Color color; // Color of the car
 	public String modelName; // The car model name
 	private float x,y;
-
+	/**
+	 * Returnerar bilens motor kraft
+	 * @return
+	 */
 	public double getEnginePower() {
 		return enginePower;
 	}
-
+	/**
+	 * Returnerar bilens fart 
+	 * @return
+	 */
 	public double getCurrentSpeed() {
 		return currentSpeed;
 	}
-
+	/**
+	 * Returnerar bilens färg
+	 * @return
+	 */
 	public Color getColor() {
 		return color;
 	}
-
+	/**
+	 * Startar upp bilens motor 
+	 */
 	public void startEngine() {
 		currentSpeed = 0.1;
 	}
