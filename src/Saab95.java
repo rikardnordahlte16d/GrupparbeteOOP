@@ -1,6 +1,6 @@
 import javafx.scene.paint.Color;
 
-public class Saab95 extends Car {
+public class Saab95 extends Car implements Moveable {
 
 	public boolean turboOn;
 
