@@ -9,9 +9,7 @@ public class Volvo740 extends Car implements Moveable{
 	 * har en modelnamn och har en metod som stoppa motor.  
 	 */
 	public Volvo740() {
-		color = Color.RED;
-		enginePower = 100;
-		modelName = "Volvo740";
+		super(Color.RED, 100, "Volvo740");
 		stopEngine();
 	}
 	

@@ -2,11 +2,18 @@ import javafx.scene.paint.Color;
 
 public abstract class Car implements Moveable {
 
-	public double enginePower; // Engine power of the car
+	private double enginePower; // Engine power of the car
 	public double currentSpeed; // The current speed of the car
-	public Color color; // Color of the car
-	public String modelName; // The car model name
+	private Color color; // Color of the car
+	private String modelName; // The car model name
 	private float x,y;
+	
+	public Car(Color color, double enginePower, String modelName) {
+		this.color = color;
+		this.enginePower = enginePower;
+		this.modelName = modelName;
+	}
+	
 	/**
 	 * Returnerar bilens motor kraft
 	 * @return
