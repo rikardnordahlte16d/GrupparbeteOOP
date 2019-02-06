@@ -54,6 +54,7 @@ public abstract class Car implements Moveable {
 	 */
 	
 	public void incrementSpeed(double amount) {
+		if (getCurrentSpeed() + speedFactor() * amount < currentSpeed || getCurrentSpeed() + speedFactor() * amount > enginePower) return;
 		currentSpeed = getCurrentSpeed() + speedFactor() * amount;
 		
 	}
@@ -65,6 +66,7 @@ public abstract class Car implements Moveable {
 	 */
 
 	public void decrementSpeed(double amount) {
+		if (getCurrentSpeed() - speedFactor() * amount > currentSpeed || getCurrentSpeed() - speedFactor() * amount < 0) return;
 		currentSpeed = getCurrentSpeed() - speedFactor() * amount;
 	}
 
@@ -75,7 +77,9 @@ public abstract class Car implements Moveable {
 	 */
 	
 	public void gas(double amount) {
-		incrementSpeed(amount);
+		if (amount >= 0 && amount <= 1) {
+			incrementSpeed(amount);
+		}
 	}
 
 	/**
@@ -84,7 +88,9 @@ public abstract class Car implements Moveable {
 	 */
 	
 	public void brake(double amount) {
-		decrementSpeed(amount);
+		if (amount >= 0 && amount <= 1) {
+			decrementSpeed(amount);
+		}
 	}
 	
 	public void setColor(Color color) {
