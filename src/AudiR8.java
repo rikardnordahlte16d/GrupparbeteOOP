@@ -6,6 +6,10 @@ public class AudiR8 extends Car {
 		stopEngine();
 	}		
 
+	/**
+	 * 
+	 *	Bilens snabbhet, jävligt snabb kan man säga. 
+	 */
 	public double speedFactor() {
 		return getEnginePower() * 500000;
 	}

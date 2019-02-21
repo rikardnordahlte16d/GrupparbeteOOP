@@ -90,7 +90,7 @@ public abstract class Car implements Moveable {
 	}
 
 	/**
-	 * 
+	 * bromsar bilen beroende, på amount fart
 	 * @param 
 	 */
 	
@@ -100,16 +100,37 @@ public abstract class Car implements Moveable {
 		}
 	}
 	
+	/**
+	 * 
+	 * Färgen på bilen 
+	 * @param color
+	 */
+	
 	public void setColor(Color color) {
 		this.color = color;
 	}
+	
+	/**
+	 * 
+	 * flyttar bilen
+	 */
 	public void move() {
 		
 	}
 	
+	/**
+	 * 
+	 * svänger vänster
+	 * 
+	 */
 	public void turnLeft() {
 		x-=currentSpeed;
 	}
+	
+	/** 
+	 * 
+	 * svänger höger
+	 */
 	
 	public void turnRight() {
 		x+=currentSpeed;
