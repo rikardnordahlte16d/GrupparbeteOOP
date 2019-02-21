@@ -7,8 +7,8 @@ public class Scania extends Car {
 	private double timer;
 	private double bedTimer;
 	
-	public Scania() {
-		super(Color.WHITE, 500, "Scania");
+	public Scania(Color color, double enginePower, String name) {
+		super(color, enginePower, name);
 		bedAngle = 70;
 		timer = System.currentTimeMillis();
 		bedTimer = 20;
@@ -19,7 +19,7 @@ public class Scania extends Car {
 	 */
 	public void setTruckBed(boolean arg) {
 		bedActive = arg;
-		if (bedActive) {
+		if (bedActive && currentSpeed > 0) {
 			while (bedAngle > 0) {
 				if (System.currentTimeMillis() - timer >= bedTimer) {
 					bedAngle-=0.5;
@@ -46,4 +46,7 @@ public class Scania extends Car {
 		return bedAngle;
 	}
 
+	public boolean getBedActive() {
+		return bedActive;
+	}
 }
