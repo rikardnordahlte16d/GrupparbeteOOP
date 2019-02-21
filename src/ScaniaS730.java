@@ -6,6 +6,7 @@ public class ScaniaS730 extends Scania {
 	private int carCounter;
 	private int releaseCarCounter;
 	private double releaseTimer;
+	private boolean firstOut, run;
 	
 	public ScaniaS730(int carAmount) {
 		super(Color.BLUE, 5, "Scania S730");
@@ -21,18 +22,30 @@ public class ScaniaS730 extends Scania {
 
 	
 	public void removeCars() {
-		releaseCarCounter = 4;
+		run = true;
+		if (!firstOut) releaseCarCounter = 4; else releaseCarCounter = 0;
 		if (!getBedActive()) {
 			setTruckBed(true);
 			removeCars();
 		} else {
-			while(cars[0] != null) {
-					if (System.currentTimeMillis() - releaseTimer >= 300) {
+			int ok = 0;
+			for(int i=0; i < cars.length; i++) {
+				if (cars[i] != null) ok = i;
+			}
+			while(run) {
+				Car c = cars[0];
+				if (firstOut) c = cars[ok];
+				
+				if (c == null) run = false;
+				
+				if (System.currentTimeMillis() - releaseTimer >= 300) {
+					
 						if (cars[releaseCarCounter] != null) {
 							System.out.println(cars[releaseCarCounter] + " removed");
 							cars[releaseCarCounter] = null;
 						}
-						if (releaseCarCounter > 0) releaseCarCounter--; 
+						if (!firstOut && releaseCarCounter > 0) releaseCarCounter--; 
+						if (firstOut && releaseCarCounter < cars.length - 1) releaseCarCounter++;
 						releaseTimer = System.currentTimeMillis();
 					}
 				}
