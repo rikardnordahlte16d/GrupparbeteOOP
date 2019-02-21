@@ -2,10 +2,10 @@ import javafx.scene.paint.Color;
 
 public class Scania extends Car {
 
-	private boolean bedActive;
-	private double bedAngle;
-	private double timer;
-	private double bedTimer;
+	private boolean bedActive; //Om flaket är nere eller inte (true = nere)
+	private double bedAngle; //Vilken vinkel flaket är på
+	private double timer; //Timern som används öfr att sänka flaket / ta upp flaket
+	private double bedTimer; //Hur snabbt den sänks / höjs
 	
 	public Scania(Color color, double enginePower, String name) {
 		super(color, enginePower, name);
@@ -39,13 +39,16 @@ public class Scania extends Car {
 		}
 	}
 	/**
-	 * Returnerar om flaket är nere eller inte
+	 * Returnerar flakets vinkel
 	 * @return
 	 */
 	public double getBedAngle() {
 		return bedAngle;
 	}
-
+	/**
+	 * Returnerar om flaket är nere eller inte
+	 * @return
+	 */
 	public boolean getBedActive() {
 		return bedActive;
 	}

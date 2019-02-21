@@ -2,25 +2,30 @@ import javafx.scene.paint.Color;
 
 public class ScaniaS730 extends Scania {
 	
-	private Car[] cars;
-	private int carCounter;
-	private int releaseCarCounter;
-	private double releaseTimer;
-	private boolean firstOut, run;
+	private Car[] cars; //Alla bilar i lastet
+	private int carCounter; //Vilken bil vi är i på listan 
+	private int releaseCarCounter; //Vilken vi är på när vi släpper alla bilar
+	private double releaseTimer; //En timer för när bilarna ska släppas av
+	public boolean firstOut, run; //firstOut är om de bilarna som lastades först, ska släppas först
 	
 	public ScaniaS730(int carAmount) {
 		super(Color.BLUE, 5, "Scania S730");
 		cars = new Car[carAmount];
 		releaseTimer = System.currentTimeMillis();
 	}
-	
+	/**
+	 * Lägger till en bil i lasten
+	 * @param car - Bilen som läggs till
+	 */
 	public void addCarToLift(Car car) {
 		if (car == this) return;
 		cars[carCounter] = car;
 		carCounter++;
 	}
-
 	
+	/** Tar bort alla bilar på lastet. Är beroende om firstOut är true eller inte
+	 * 
+	 */
 	public void removeCars() {
 		run = true;
 		if (!firstOut) releaseCarCounter = 4; else releaseCarCounter = 0;
