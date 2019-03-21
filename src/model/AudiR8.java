@@ -1,6 +1,7 @@
+package model;
 import javafx.scene.paint.Color;
 
-public class AudiR8 extends Car {
+public class AudiR8 extends Vehicle {
 	public AudiR8() {
 		super(Color.RED, 5, "Audi R8");
 		stopEngine();

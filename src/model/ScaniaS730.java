@@ -1,3 +1,4 @@
+package model;
 import javafx.scene.paint.Color;
 
 public class ScaniaS730 extends Scania {
@@ -44,8 +45,7 @@ public class ScaniaS730 extends Scania {
 				if (c == null) run = false;
 				
 				if (System.currentTimeMillis() - releaseTimer >= 300) {
-					
-						if (cars[releaseCarCounter] != null) {
+					    if (cars[releaseCarCounter] != null) {
 							System.out.println(cars[releaseCarCounter] + " removed");
 							cars[releaseCarCounter] = null;
 						}

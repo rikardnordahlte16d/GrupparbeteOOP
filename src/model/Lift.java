@@ -1,22 +1,17 @@
-import javafx.scene.paint.Color;
-
-public class Scania extends Car {
+package model;
+public class Lift {
 
 	private boolean bedActive; //Om flaket är nere eller inte (true = nere)
 	private double bedAngle; //Vilken vinkel flaket är på
 	private double timer; //Timern som används öfr att sänka flaket / ta upp flaket
 	private double bedTimer; //Hur snabbt den sänks / höjs
-	
-	public Scania(Color color, double enginePower, String name) {
-		super(color, enginePower, name);
+
+	public Lift() {
 		bedAngle = 70;
 		timer = System.currentTimeMillis();
 		bedTimer = 20;
 	}
-	/**
-	 * Tar upp eller ner flaket (gör det stegvis med hjälp av tid) 
-	 * @param arg om den ska åka upp eller inte 
-	 */
+	
 	public void setTruckBed(boolean arg) {
 		bedActive = arg;
 		if (bedActive && currentSpeed > 0) {
@@ -52,4 +47,5 @@ public class Scania extends Car {
 	public boolean getBedActive() {
 		return bedActive;
 	}
+	
 }

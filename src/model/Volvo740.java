@@ -1,6 +1,7 @@
+package model;
 import javafx.scene.paint.Color;
 
-public class Volvo740 extends Car implements Moveable{
+public class Volvo740 extends Vehicle implements Moveable{
 
 	public final static double trimFactor = 1.25;
 

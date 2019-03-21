@@ -1,3 +1,4 @@
+package model;
 import javafx.scene.paint.Color;
 
 public class Vehicle implements Moveable {
@@ -111,7 +112,7 @@ public class Vehicle implements Moveable {
 	
 	/**
 	 * 
-	 * flyttar bilen
+	 * flyttar fordonet
 	 */
 	public void move() {
 		
@@ -133,5 +134,12 @@ public class Vehicle implements Moveable {
 	
 	public void turnRight() {
 		x+=currentSpeed;
+	}
+	
+	public float getXPos() {
+		return x;
+	}
+	public float getYPos() {
+		return y;
 	}
 }

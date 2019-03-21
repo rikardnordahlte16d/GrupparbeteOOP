@@ -1,4 +1,12 @@
+package model;
 import javafx.scene.paint.Color;
+
+
+/**
+    Scania Flatbed
+	Transport - Flatbed, CarLoader
+	Ferry - Carloader
+ */
 
 public abstract class Car implements Moveable {
 
