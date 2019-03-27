@@ -14,7 +14,7 @@ public class Lift {
 	
 	public void setTruckBed(boolean arg) {
 		bedActive = arg;
-		if (bedActive && currentSpeed > 0) {
+		if (bedActive) {
 			while (bedAngle > 0) {
 				if (System.currentTimeMillis() - timer >= bedTimer) {
 					bedAngle-=0.5;

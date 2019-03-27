@@ -142,4 +142,8 @@ public class Vehicle implements Moveable {
 	public float getYPos() {
 		return y;
 	}
+	
+	public String getModelName() {
+		return modelName;
+	}
 }

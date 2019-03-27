@@ -1,7 +1,7 @@
 package model;
 import javafx.scene.paint.Color;
 
-public class Saab95 extends Car implements Moveable {
+public class Saab95 extends Vehicle implements Moveable {
 
 	public boolean turboOn; //Om turbo är på eller ej
 
